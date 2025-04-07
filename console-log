@@ -1,0 +1,2042 @@
+boot table build time  :2024/04/26 10:27:44
+
+boot table file name   :Hi3519DV500-DMEB_6L_T_DDR4_2666M-1GB_16bit-A55_850M_battery.xlsm
+
+DDR size: 0x00000400MB
+
+
+
+System startup
+
+
+
+Uncompress Ok!
+
+
+
+U-Boot 2022.07 (Apr 26 2024 - 10:27:47 +0800)hi3519dv500
+
+
+
+DRAM:  Relocation Offset is: 17715000
+
+Relocating to 5ff15000, new gd at 5faf4de0, sp at 5faf4dd0
+
+Core:  1 devices, 1 uclasses
+
+SPI Nor:  Boot Media isn't SPI Nor
+
+NAND:  fmc_ip_ver_check(32): Check Flash Memory Controller v100 ...fmc_ip_ver_check(38):  Found
+
+SPI Nand ID Table Version 2.7
+
+SPI Nand(cs 0) ID: 0xc2 0xb7 0x3 Name:"MX35UF4GE4AD"
+
+Block:256KB Page:4KB OOB:128B ECC:4bit/512
+
+Chipsize:512 MiB
+
+MMC:
+
+Loading Environment from SPIFlash... Boot Media isn't SPI Nor
+
+*** Warning - spi_flash_probe() failed, using default environment
+
+
+
+Loading Environment from NAND... OK
+
+In:    serial
+
+Out:   serial
+
+Err:   serial
+
+
+
+Net:   gmac0
+
+Error: gmac0 address not set.
+
+
+
+activepart: a
+
+Hit any key to stop autoboot:  0
+
+
+
+NAND read: device 0 offset 0x400000, size 0x100000
+
+ 1048576 bytes read: OK
+
+
+
+NAND read: device 0 offset 0x100000, size 0x100000
+
+ 1048576 bytes read: OK
+
+core0 start A
+
+NATND rFead : ..d.evic
+e
+ 0 offset 0x500000, size 0xf00000
+
+NOTICE:  BL31: v2.7(release):atom-v2-v6.0.30-9-g426c4a25e-dirty
+
+NOTICE:  BL31: Built : 10:28:17, Apr 26 2024
+
+NOTICE:  IPC: waiting for kernel 15728640 bytes read: OK
+
+Run the smc command to switch to the GSL.
+
+
+
+sram to npu!
+
+Booting Linux on physical CPU 0x0000000000 [0x412fd050]
+
+Linux version 5.10.0 (root@8604745a55a3) (aarch64-v01c01-linux-musl-gcc (GCC-10.3.0 musl-1.2.3 ver100.110 2023-06-09 09:00:00) 10.3.0, GNU ld (GNU Binutils) 2.38) #1 SMP Fri Jan 3 08:08:02 UTC 2025
+
+Machine model: Vendor HI3519DV500 DEMO Board
+
+Memory limited to 512MB
+
+Zone ranges:
+
+  DMA      [mem 0x0000000040030000-0x000000006002ffff]
+
+  DMA32    empty
+
+  Normal   empty
+
+Movable zone start for each node
+
+Early memory node ranges
+
+  node   0: [mem 0x0000000040030000-0x000000006002ffff]
+
+Initmem setup node 0 [mem 0x0000000040030000-0x000000006002ffff]
+
+On node 0, zone DMA: 976 pages in unavailable ranges
+
+cma zone is not set!
+
+cma: Reserved 4 MiB at 0x000000005f800000
+
+psci: probing for conduit method from DT.
+
+psci: PSCIv1.1 detected in firmware.
+
+psci: Using standard PSCI v0.2 function IDs
+
+psci: MIGRATE_INFO_TYPE not supported.
+
+psci: SMC Calling Convention v1.2
+
+percpu: Embedded 19 pages/cpu s40536 r8192 d29096 u77824
+
+Detected VIPT I-cache on CPU0
+
+CPU features: detected: GIC system register CPU interface
+
+CPU features: detected: ARM errata 1165522, 1319367, or 1530923
+
+Built 1 zonelists, mobility grouping on.  Total pages: 129024
+
+Kernel command line: mem=512M console=ttyAMA0,115200 clk_ignore_unused root=ubi0:ubifs rootfstype=ubifs rw ubi.mtd=6  mtdparts=nand:1M(boot_image.bin),1M(bl31.bin),1M(rawparam),1M(rawparambak),1M(resImage),15M(uImage),32M(rootfs.ubifs),64M(appfs.ubifs),1M(_rawparam),1M(_rawparambak),1M(_resImage),15M(_uImage),32M(_rootfs.ubifs),64M(_appfs.ubifs),-(data)
+
+Dentry cache hash table entries: 65536 (order: 7, 524288 bytes, linear)
+
+Inode-cache hash table entries: 32768 (order: 6, 262144 bytes, linear)
+
+mem auto-init: stack:off, heap alloc:off, heap free:off
+
+Memory: 490552K/524288K available (7550K kernel code, 438K rwdata, 1768K rodata, 1152K init, 253K bss, 29640K reserved, 4096K cma-reserved)
+
+SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+
+rcu: Hierarchical RCU implementation.
+
+rcu:    RCU event tracing is enabled.
+
+        Tracing variant of Tasks RCU enabled.
+
+rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+
+NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+
+GICv3: 320 SPIs implemented
+
+GICv3: 0 Extended SPIs implemented
+
+GICv3: Distributor has no Range Selector support
+
+GICv3: 16 PPIs implemented
+
+GICv3: CPU0: found redistributor 0 region 0:0x0000000012440000
+
+arch_timer: cp15 timer(s) running at 24.00MHz (phys).
+
+clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
+
+sched_clock: 56 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns
+
+Console: colour dummy device 80x25
+
+Calibrating delay loop (skipped), value calculated using timer frequency.. 48.00 BogoMIPS (lpj=96000)
+
+pid_max: default: 32768 minimum: 301
+
+Mount-cache hash table entries: 1024 (order: 1, 8192 bytes, linear)
+
+Mountpoint-cache hash table entries: 1024 (order: 1, 8192 bytes, linear)
+
+rcu: Hierarchical SRCU implementation.
+
+smp: Bringing up secondary CPUs ...
+
+Detected VIPT I-cache on CPU1
+
+GICv3: CPU1: found redistributor 100 region 0:0x0000000012460000
+
+CPU1: Booted secondary processor 0x0000000100 [0x412fd050]
+
+smp: Brought up 1 node, 2 CPUs
+
+SMP: Total of 2 processors activated.
+
+CPU features: detected: Privileged Access Never
+
+CPU features: detected: User Access Override
+
+CPU features: detected: 32-bit EL0 Support
+
+CPU features: detected: Common not Private translations
+
+CPU features: detected: RAS Extension Support
+
+CPU features: detected: Data cache clean to the PoU not required for I/D coherence
+
+CPU features: detected: CRC32 instructions
+
+CPU features: detected: Speculative Store Bypassing Safe (SSBS)
+
+CPU: All CPU(s) started at EL1
+
+alternatives: patching kernel code
+
+devtmpfs: initialized
+
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+
+futex hash table entries: 512 (order: 3, 32768 bytes, linear)
+
+pinctrl core: initialized pinctrl subsystem
+
+NET: Registered protocol family 16
+
+DMA: preallocated 128 KiB GFP_KERNEL pool for atomic allocations
+
+DMA: preallocated 128 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+
+DMA: preallocated 128 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+
+ASID allocator initialised with 65536 entries
+
+Serial: AMBA PL011 UART driver
+
+ssp-pl022 11070000.spi: deassert reset
+
+ssp-pl022 11070000.spi: Failed to work in dma mode, work without dma!
+
+ssp-pl022 11071000.spi: deassert reset
+
+ssp-pl022 11071000.spi: Failed to work in dma mode, work without dma!
+
+ssp-pl022 11072000.spi: deassert reset
+
+ssp-pl022 11072000.spi: Failed to work in dma mode, work without dma!
+
+ssp-pl022 11073000.spi: deassert reset
+
+ssp-pl022 11073000.spi: Failed to work in dma mode, work without dma!
+
+usbcore: registered new interface driver usbfs
+
+usbcore: registered new interface driver hub
+
+usbcore: registered new device driver usb
+
+videodev: Linux video capture interface: v2.00
+
+[UPS-PHY][ups_phy_module_init]registered new ups phy driver
+
+Advanced Linux Sound Architecture Driver Initialized.
+
+clocksource: Switched to clocksource arch_sys_counter
+
+VFS: Disk quotas dquot_6.6.0
+
+VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+
+NET: Registered protocol family 2
+
+IP idents hash table entries: 8192 (order: 4, 65536 bytes, linear)
+
+tcp_listen_portaddr_hash hash table entries: 256 (order: 0, 4096 bytes, linear)
+
+Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+
+TCP established hash table entries: 4096 (order: 3, 32768 bytes, linear)
+
+TCP bind hash table entries: 4096 (order: 4, 65536 bytes, linear)
+
+TCP: Hash tables configured (established 4096 bind 4096)
+
+UDP hash table entries: 256 (order: 1, 8192 bytes, linear)
+
+UDP-Lite hash table entries: 256 (order: 1, 8192 bytes, linear)
+
+NET: Registered protocol family 1
+
+Initialise system trusted keyrings
+
+workingset: timestamp_bits=62 max_order=17 bucket_order=0
+
+fuse: init (API version 7.32)
+
+Key type asymmetric registered
+
+Asymmetric key parser 'x509' registered
+
+Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+
+io scheduler mq-deadline registered
+
+io scheduler kyber registered
+
+cacheinfo: Unable to detect cache hierarchy for CPU 0
+
+brd: module loaded
+
+loop: module loaded
+
+bsp_nand: Failed to locate of_node [id: 0]
+
+bsp-sfc bsp_spi_nor.0: SPI Nor ID Table Version 1.2
+
+bsp-sfc bsp_spi_nor.0: unrecognized Manufacturer ID
+
+bsp-sfc bsp_spi_nor.0: spi nor register fail!
+
+bsp-sfc: probe of bsp_spi_nor.0 failed with error -2
+
+SPI Nand ID Table Version 2.7
+
+
+
+SPI Nand(cs 0) ID: 0xc2 0xb7 0x3
+
+nand: device found, Manufacturer ID: 0xc2, Chip ID: 0xb7
+
+nand: Macronix MX35UF4GE4AD
+
+nand: 512 MiB, SLC, erase size: 256 KiB, page size: 4096, OOB size: 128
+
+Nand(Auto):
+
+OOB:128B
+
+ECC:4bit/512
+
+nand: NAND_ECC_ENGINE_TYPE_NONE selected by board driver. This is not recommended!
+
+15 cmdlinepart partitions found on MTD device nand
+
+Creating 15 MTD partitions on "nand":
+
+0x000000000000-0x000000100000 : "boot_image.bin"
+
+0x000000100000-0x000000200000 : "bl31.bin"
+
+0x000000200000-0x000000300000 : "rawparam"
+
+0x000000300000-0x000000400000 : "rawparambak"
+
+0x000000400000-0x000000500000 : "resImage"
+
+0x000000500000-0x000001400000 : "uImage"
+
+0x000001400000-0x000003400000 : "rootfs.ubifs"
+
+0x000003400000-0x000007400000 : "appfs.ubifs"
+
+0x000007400000-0x000007500000 : "_rawparam"
+
+0x000007500000-0x000007600000 : "_rawparambak"
+
+0x000007600000-0x000007700000 : "_resImage"
+
+0x000007700000-0x000008600000 : "_uImage"
+
+0x000008600000-0x00000a600000 : "_rootfs.ubifs"
+
+0x00000a600000-0x00000e600000 : "_appfs.ubifs"
+
+0x00000e600000-0x000020000000 : "data"
+
+gmac_v200 10290000.ethernet: invalid resource
+
+attached PHY 1 to driver Generic PHY, PHY_ID=0xffff
+
+ETH: rgmii-id, phy_addr=1
+
+bsp_rtc 11110000.rtc: registered as rtc0
+
+bsp_rtc 11110000.rtc: setting system clock to 1970-01-01T00:14:49 UTC (889)
+
+bsp_rtc 11110000.rtc: RTC driver for bsp enabled
+
+i2c /dev entries driver
+
+bsp-i2c 11060000.i2c: deassert reset
+
+bsp-i2c 11060000.i2c: IRQ index 0 not found
+
+bsp-i2c 11061000.i2c: deassert reset
+
+bsp-i2c 11061000.i2c: IRQ index 0 not found
+
+bsp-i2c 11062000.i2c: deassert reset
+
+bsp-i2c 11062000.i2c: IRQ index 0 not found
+
+bsp-i2c 11063000.i2c: deassert reset
+
+bsp-i2c 11063000.i2c: IRQ index 0 not found
+
+bsp-i2c 11064000.i2c: deassert reset
+
+bsp-i2c 11064000.i2c: IRQ index 0 not found
+
+bsp-i2c 11065000.i2c: deassert reset
+
+bsp-i2c 11065000.i2c: IRQ index 0 not found
+
+bsp-i2c 11066000.i2c: deassert reset
+
+bsp-i2c 11066000.i2c: IRQ index 0 not found
+
+bsp-i2c 11067000.i2c: deassert reset
+
+bsp-i2c 11067000.i2c: IRQ index 0 not found
+
+usbcore: registered new interface driver uvcvideo
+
+USB Video Class driver (1.1.1)
+
+sdhci: Secure Digital Host Controller Interface driver
+
+sdhci: Copyright(c) Pierre Ossman
+
+sdhci-pltfm: SDHCI platform and OF driver helper
+
+SMCCC: SOC_ID: ARCH_SOC_ID not implemented, skipping ....
+
+usbcore: registered new interface driver usbhid
+
+usbhid: USB HID core driver
+
+xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+
+xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 1
+
+xhci-hcd xhci-hcd.0.auto: hcc params 0x0220fe6d hci version 0x110 quirks 0x0000000000010010
+
+xhci-hcd xhci-hcd.0.auto: irq 80, io mem 0x10320000
+
+hub 1-0:1.0: USB hub found
+
+hub 1-0:1.0: 1 port detected
+
+xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+
+xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 2
+
+xhci-hcd xhci-hcd.0.auto: Host supports USB 3.0 SuperSpeed
+
+usb usb2: We don't know the algorithms for LPM for this host, disabling LPM.
+
+hub 2-0:1.0: USB hub found
+
+hub 2-0:1.0: 1 port detected
+
+[WING-USB][wing_usb_module_init]register wing usb driver
+
+mmc0: SDHCI controller on 10030000.SDIO [10030000.SDIO] using ADMA 64-bit
+
+NET: Registered protocol family 10
+
+Segment Routing with IPv6
+
+NET: Registered protocol family 17
+
+Loading compiled-in X.509 certificates
+
+uart-pl011 11040000.uart: deassert reset
+
+11040000.uart: ttyAMA0 at MMIO 0x11040000 (irq = 16, base_baud = 0) is a PL011 rev2
+
+usb 1-1: new high-speed USB device number 2 using xhci-hcd
+
+printk: console [ttyAMA0] enabled
+
+uart-pl011 11041000.uart: deassert reset
+
+11041000.uart: ttyAMA1 at MMIO 0x11041000 (irq = 17, base_baud = 0) is a PL011 rev2
+
+uart-pl011 11044000.uart: deassert reset
+
+11044000.uart: ttyAMA4 at MMIO 0x11044000 (irq = 18, base_baud = 0) is a PL011 rev2
+
+pl061_gpio 11090000.gpio_chip: PL061 GPIO chip registered
+
+pl061_gpio 11091000.gpio_chip: PL061 GPIO chip registered
+
+pl061_gpio 11092000.gpio_chip: PL061 GPIO chip registered
+
+pl061_gpio 11093000.gpio_chip: PL061 GPIO chip registered
+
+pl061_gpio 11094000.gpio_chip: PL061 GPIO chip registered
+
+pl061_gpio 11095000.gpio_chip: PL061 GPIO chip registered
+
+mmc0: tuning done! valid phase shift [14, 12] Final Phase:29
+
+pl061_gpio 11096000.gpio_chip: PL061 GPIO chip registered
+
+mmc0: new ultra high speed SDR104 SDXC card at address aaaa
+
+pl061_gpio 11097000.gpio_chip: PL061 GPIO chip registered
+
+mmcblk0: mmc0:aaaa SD128 119 GiB
+
+pl061_gpio 11098000.gpio_chip: PL061 GPIO chip registered
+
+pl061_gpio 11099000.gpio_chip: PL061 GPIO chip registered
+
+pl061_gpio 1109a000.gpio_chip: PL061 GPIO chip registered
+
+ mmcblk0: p1
+
+pl061_gpio 1109b000.gpio_chip: PL061 GPIO chip registered
+
+pl061_gpio 1109c000.gpio_chip: PL061 GPIO chip registered
+
+pl061_gpio 1109d000.gpio_chip: PL061 GPIO chip registered
+
+pl061_gpio 1109e000.gpio_chip: PL061 GPIO chip registered
+
+ubi0: attaching mtd6
+
+ubi0: scanning is finished
+
+ubi0: attached mtd6 (name "rootfs.ubifs", size 32 MiB)
+
+ubi0: PEB size: 262144 bytes (256 KiB), LEB size: 253952 bytes
+
+ubi0: min./max. I/O unit sizes: 4096/4096, sub-page size 4096
+
+ubi0: VID header offset: 4096 (aligned 4096), data offset: 8192
+
+ubi0: good PEBs: 128, bad PEBs: 0, corrupted PEBs: 0
+
+ubi0: user volume: 1, internal volumes: 1, max. volumes count: 128
+
+ubi0: max/mean erase counter: 3/1, WL threshold: 4096, image sequence number: 69094470
+
+ubi0: available PEBs: 0, total reserved PEBs: 128, PEBs reserved for bad PEB handling: 40
+
+ubi0: background thread "ubi_bgt0d" started, PID 898
+
+cfg80211: Loading compiled-in X.509 certificates for regulatory database
+
+cfg80211: Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+
+clk: Not disabling unused clocks
+
+ALSA device list:
+
+  No soundcards found.
+
+platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
+
+cfg80211: failed to load regulatory.db
+
+uart-pl011 11040000.uart: no DMA platform data
+
+UBIFS (ubi0:0): Mounting in unauthenticated mode
+
+UBIFS (ubi0:0): background thread "ubifs_bgt0_0" started, PID 905
+
+UBIFS (ubi0:0): UBIFS: mounted UBI device 0, volume 0, name "ubifs"
+
+UBIFS (ubi0:0): LEB size: 253952 bytes (248 KiB), min./max. I/O unit sizes: 4096 bytes/4096 bytes
+
+UBIFS (ubi0:0): FS size: 18792448 bytes (17 MiB, 74 LEBs), journal size 8888320 bytes (8 MiB, 35 LEBs)
+
+UBIFS (ubi0:0): reserved for root: 0 bytes (0 KiB)
+
+UBIFS (ubi0:0): media format: w4/r0 (latest is w5/r0), UUID 4DC2FBEE-4DFF-4056-BA67-43EE733BB0EA, small LPT model
+
+VFS: Mounted root (ubifs filesystem) on device 0:12.
+
+devtmpfs: mounted
+
+Freeing unused kernel memory: 1152K
+
+Run /sbin/init as init process
+
+mknod: /dev/console: File exists
+
+mknod: /dev/ttyAMA0: File exists
+
+mknod: /dev/ttyAMA1: File exists
+
+mknod: /dev/null: File exists
+
+ubi1: attaching mtd7
+
+ubi1: scanning is finished
+
+ubi1: attached mtd7 (name "appfs.ubifs", size 64 MiB)
+
+ubi1: PEB size: 262144 bytes (256 KiB), LEB size: 253952 bytes
+
+ubi1: min./max. I/O unit sizes: 4096/4096, sub-page size 4096
+
+ubi1: VID header offset: 4096 (aligned 4096), data offset: 8192
+
+ubi1: good PEBs: 256, bad PEBs: 0, corrupted PEBs: 0
+
+ubi1: user volume: 1, internal volumes: 1, max. volumes count: 128
+
+ubi1: max/mean erase counter: 2/0, WL threshold: 4096, image sequence number: 1583548487
+
+ubi1: available PEBs: 0, total reserved PEBs: 256, PEBs reserved for bad PEB handling: 40
+
+ubi1: background thread "ubi_bgt1d" started, PID 922
+
+UBI device number 1, total 256 LEBs (65011712 bytes, 62.0 MiB), available 0 LEBs (0 bytes), LEB size 253952 bytes (248.0 KiB)
+
+UBIFS (ubi1:0): Mounting in unauthenticated mode
+
+UBIFS (ubi1:0): background thread "ubifs_bgt1_0" started, PID 925
+
+UBIFS (ubi1:0): UBIFS: mounted UBI device 1, volume 0, name "ubifs"
+
+UBIFS (ubi1:0): LEB size: 253952 bytes (248 KiB), min./max. I/O unit sizes: 4096 bytes/4096 bytes
+
+UBIFS (ubi1:0): FS size: 51298304 bytes (48 MiB, 202 LEBs), journal size 8380416 bytes (7 MiB, 33 LEBs)
+
+UBIFS (ubi1:0): reserved for root: 0 bytes (0 KiB)
+
+UBIFS (ubi1:0): media format: w4/r0 (latest is w5/r0), UUID 580AEB9E-2193-4BD9-B6DE-9FF3C629EB18, small LPT model
+
+sys_config: loading out-of-tree module taints kernel.
+
+sys_config_parse_board,183: ==========board_type: dmeb==========
+
+sys_config_parse_board,190: g_board 1
+
+sensor_cfg,591: ==========sensor0: imx258==========
+
+sensor_cfg,591: ==========sensor1: dc==========
+
+sensor_cfg,591: ==========sensor2: imx258==========
+
+sensor_cfg,591: ==========sensor3: imx258==========
+
+Media Memory Zone Manager
+
+load ot_mmz ....OK!
+
+ot_base: module license 'Proprietary' taints kernel.
+
+Disabling lock debugging due to kernel taint
+
+load base.ko ....OK!
+
+load vb.ko ....OK!
+
+load vca.ko ....OK!
+
+load sys.ko ....OK!
+
+load tde.ko ....OK!
+
+load region.ko ....OK!
+
+load gdc.ko ....OK!
+
+load vpp.ko ....OK!
+
+load vgs.ko ....OK!
+
+load dis.ko ....OK!
+
+load vi.ko ....OK!
+
+load isp.ko ....OK!
+
+load vpss.ko ....OK!
+
+load mcf.ko ....OK!
+
+load chnl.ko ....OK!
+
+load vfmw.ko ....OK!
+
+load rc.ko ....OK!
+
+load venc.ko ....OK!
+
+load venc_svr.ko ....OK!
+
+load h264e.ko ....OK!
+
+load h265e.ko ....OK!
+
+load jpege.ko ....OK!
+
+load jpegd.ko ....OK!
+
+load vdec.ko ....OK!
+
+load ive.ko ....OK!
+
+load pwm.ko ....OK!
+
+load ot_piris.ko ....OK!
+
+load sensor_i2c.ko ....OK!
+
+load mipi_tx.ko ....OK!
+
+load aio.ko ....OK!
+
+load ai.ko ....OK!
+
+load ao.ko ....OK!
+
+load aenc.ko ....OK!
+
+load adec.ko ....OK!
+
+load acodec.ko ....OK!
+
+load mipi_rx.ko ....OK!
+
+load ot_user ....OK!
+
+load aiisp.ko ....OK!
+
+load ot_spi.ko ....OK!
+
+load gyrodis.ko ....OK!
+
+load motionfusion.ko ....OK!
+
+load motionsensor_mng.ko ....OK!
+
+load motionsensor_chip.ko ....OK!
+
+load pm.ko ....OK!
+
+load ot_cipher.ko ....OK!
+
+load ot_km.ko ....OK!
+
+ubi2: attaching mtd14
+
+ubi2: scanning is finished
+
+ubi2: attached mtd14 (name "data", size 282 MiB)
+
+ubi2: PEB size: 262144 bytes (256 KiB), LEB size: 253952 bytes
+
+ubi2: min./max. I/O unit sizes: 4096/4096, sub-page size 4096
+
+ubi2: VID header offset: 4096 (aligned 4096), data offset: 8192
+
+ubi2: good PEBs: 1128, bad PEBs: 0, corrupted PEBs: 0
+
+ubi2: user volume: 1, internal volumes: 1, max. volumes count: 128
+
+ubi2: max/mean erase counter: 3/1, WL threshold: 4096, image sequence number: 901038368
+
+ubi2: available PEBs: 0, total reserved PEBs: 1128, PEBs reserved for bad PEB handling: 40
+
+ubi2: background thread "ubi_bgt2d" started, PID 1212
+
+UBI device number 2, total 1128 LEBs (286457856 bytes, 273.1 MiB), available 0 LEBs (0 bytes), LEB size 253952 bytes (248.0 KiB)
+
+ubimkvol: error!: UBI device does not have free logical eraseblocks
+
+UBIFS (ubi2:0): Mounting in unauthenticated mode
+
+UBIFS (ubi2:0): background thread "ubifs_bgt2_0" started, PID 1217
+
+UBIFS (ubi2:0): UBIFS: mounted UBI device 2, volume 0, name "data"
+
+UBIFS (ubi2:0): LEB size: 253952 bytes (248 KiB), min./max. I/O unit sizes: 4096 bytes/4096 bytes
+
+UBIFS (ubi2:0): FS size: 272490496 bytes (259 MiB, 1073 LEBs), journal size 13713408 bytes (13 MiB, 54 LEBs)
+
+UBIFS (ubi2:0): reserved for root: 4952683 bytes (4836 KiB)
+
+UBIFS (ubi2:0): media format: w5/r0 (latest is w5/r0), UUID E152A658-BC50-46E1-9A4C-DEA9D7BF05A2, small LPT model
+
+*** Board tools : ver0.0.1_20121120 ***
+
+*** Board tools : ver0.0.1_20121120 ***
+
+[debug]: {source/utils/cmdshell.c:68}cmdstr:bspmm
+
+[debug]: {source/utils/cmdshell.c:68}cmdstr:bspmm
+
+0x11019140: 0x00004030 --> 0x00004030
+
+0x179F0040: 0x00001501 --> 0x00001740
+
+[END]
+
+[END]
+
+*** Board tools : ver0.0.1_20121120 ***
+
+*** Board tools : ver0.0.1_20121120 ***
+
+[debug]: {source/utils/cmdshell.c:68}cmdstr:bspmm
+
+[debug]: {source/utils/cmdshell.c:68}cmdstr:bspmm
+
+0x11019150: 0x00004003 --> 0x00004010
+
+0x1109B400: 0x00000000 --> 0x00000080
+
+[END]
+
+[END]
+
+*** Board tools : ver0.0.1_20121120 ***
+
+*** Board tools : ver0.0.1_20121120 ***
+
+[debug]: {source/utils/cmdshell.c:68}cmdstr:bspmm
+
+[debug]: {source/utils/cmdshell.c:68}cmdstr:bspmm
+
+0x11019164: 0x00006001 --> 0x00000010
+
+0x1109B200: 0x00000080 --> 0x00000000
+
+[END]
+
+[END]
+
+*** Board tools : ver0.0.1_20121120 ***
+
+[debug]: {source/utils/cmdshell.c:68}cmdstr:bspmm
+
+0x11019184: 0x00006001 --> 0x00005010
+
+[END]
+
+*** Board tools : ver0.0.1_20121120 ***
+
+[debug]: {source/utils/cmdshell.c:68}cmdstr:bspmm
+
+0x110191a4: 0x00006001 --> 0x00006010
+
+[END]
+
+*** Board tools : ver0.0.1_20121120 ***
+
+[debug]: {source/utils/cmdshell.c:68}cmdstr:bspmm
+
+0x110191c4: 0x00006001 --> 0x00000010
+
+[END]
+
+*** Board tools : ver0.0.1_20121120 ***
+
+[debug]: {source/utils/cmdshell.c:68}cmdstr:bspmm
+
+0x11019740: 0x00004001 --> 0x00014010
+
+[END]
+
+*** Board tools : ver0.0.1_20121120 ***
+
+[debug]: {source/utils/cmdshell.c:68}cmdstr:bspmm
+
+0x11019b40: 0x00004000 --> 0x00003000
+
+[END]
+
+*** Board tools : ver0.0.1_20121120 ***
+
+[debug]: {source/utils/cmdshell.c:68}cmdstr:bspmm
+
+0x11019ec0: 0x00003000 --> 0x00003000
+
+[END]
+
+*** Board tools : ver0.0.1_20121120 ***
+
+[debug]: {source/utils/cmdshell.c:68}cmdstr:bspmm
+
+0x11017140: 0x00000000 --> 0x00000000
+
+[END]
+
+*** Board tools : ver0.0.1_20121120 ***
+
+[debug]: {source/utils/cmdshell.c:68}cmdstr:bspmm
+
+0x11017340: 0x00000000 --> 0x00000010
+
+[END]
+
+*** Board tools : ver0.0.1_20121120 ***
+
+[debug]: {source/utils/cmdshell.c:68}cmdstr:bspmm
+
+0x11018254: 0x00000001 --> 0x00003001
+
+[END]
+
+*** Board tools : ver0.0.1_20121120 ***
+
+[debug]: {source/utils/cmdshell.c:68}cmdstr:bspmm
+
+0x11016680: 0x02003003 --> 0x01006000
+
+[END]
+
+*** Board tools : ver0.0.1_20121120 ***
+
+[debug]: {source/utils/cmdshell.c:68}cmdstr:bspmm
+
+0x110167c0: 0x00001000 --> 0x00002000
+
+[END]
+
+------------finish !!!----------------------
+
+*** Board tools : ver0.0.1_20121120 ***
+
+[debug]: {source/utils/cmdshell.c:68}cmdstr:bspmm
+
+0x1109B200: 0x00000000 --> 0x00000080
+
+[END]
+
+*** Board tools : ver0.0.1_20121120 ***
+
+[debug]: {source/utils/cmdshell.c:68}cmdstr:bspmm
+
+0x0EFF0028: 0x00001300 --> 0x00001482
+
+[END]
+
+*** Board tools : ver0.0.1_20121120 ***
+
+[debug]: {source/utils/cmdshell.c:68}cmdstr:bspmm
+
+0x0EFF0024: 0x00001300 --> 0x00001482
+
+[END]
+
+taskset: can't execute './quick_shot': No such file or directory
+
+Auto login as root ...
+
+login[1249]: root login on 'ttyS000'
+
+Welcome to SsLinux.
+
+~ # [00:14:54:472 WARN-]:acquire_trackimg_proc[407]:acquire_trackimg_proc start
+
+[00:14:54:473 WARN-]:acquire_optical_proc[365]:acquire_optical_proc start
+
+Subscriber with name logger_1241 already exist
+
+[00:14:54:479 WARN-]:acquire_gimlog_proc[460]:acquire_gimlog_proc start
+
+[00:14:54:479 WARN-]:acquire_fcs_msg_proc[293]:acquire_fcs_msg_proc start
+
+[00:14:54:519 INFO-]:main[371]:Start optical algorithm
+
+[00:14:54:525 INFO-init]:SS_PDT_INIT_PERIPHERAL_Init[16]:-->peripheral init ...
+
+Given T44_imu_cam:
+
+      0       1       0 -0.0588
+
+     -1       0       0       0
+
+      0       0       1  0.0437
+
+      0       0       0       1
+
+[00:14:54:538 INFO-]:setConfig[153]:FlowOdom:set Config feat[120, 7], of[7, 2, 0.001000]
+
+FlowOdom:set Tx_imu_to se3{so3[      0       0 -1.5708],t[-0.0588       0  0.0437]}
+
+[00:14:54:541 INFO-]:setCamModel[160]:FlowOdom:set cam mod[355.906647,356.444305,128.000000,88.000000] [256, 176]
+
+*** Board tools : ver0.0.1_20121120 ***
+
+[debug]: {source/utils/cmdshell.c:68}cmdstr:bspmm
+
+0x179F0024: 0x00001172 --> 0x00001300
+
+[END]
+
+[00:14:54:596 INFO-]:SS_System[630]:pid status.[0]
+
+[00:14:54:597 INFO-PARAM]:PDT_PARAM_PostInit[1609]:imu detect pin: 1
+
+[00:14:54:598 INFO-PARAM]:PDT_PARAM_PostInit[1632]:It's old imu board(PLCC).
+
+[00:14:54:598 INFO-PARAM]:PDT_PARAM_PostInit[1644]:copy mode 0 param
+
+[00:14:54:599 INFO-PARAM]:PDT_PARAM_PostInit[1644]:copy mode 1 param
+
+[00:14:54:599 INFO-PARAM]:PDT_PARAM_PostInit[1644]:copy mode 2 param
+
+[00:14:54:599 INFO-PARAM]:PDT_PARAM_PostInit[1644]:copy mode 3 param
+
+[00:14:54:599 INFO-PARAM]:PDT_PARAM_PostInit[1644]:copy mode 4 param
+
+[00:14:54:599 INFO-init]:main[500]:DS_LIVESVR_Init end
+
+[00:14:54:601 INFO-init]:main[511]:PDT_INIT_Init start
+
+[00:14:54:601 INFO-deepsea_liveserver]:Thread_ProcessingFrameData[287]:start to processing frame data......
+
+[00:14:54:603 INFO-init]:PDT_SetSysInitTime[42]:RTC   DateTime: 1970/01/01-00:00:00
+
+[00:14:54:603 INFO-init]:PDT_SetSysInitTime[47]:Build DateTime: 2025/01/03-08:18:31
+
+[08:18:31:045 INFO-system]:SS_SYSTEM_GetStartupWakeUpSource[39]:hi3519dv500 SS_SYSTEM_GetStartupWakeUpSource API not support
+
+[08:18:31:046 INFO-system]:SS_SYSTEM_GetStartupWakeUpSource[39]:hi3519dv500 SS_SYSTEM_GetStartupWakeUpSource API not support
+
+[08:18:31:050 INFO-PARAM]:PDT_PARAM_GetCamMediaCfg[906]:OT_MEDIA_VCAP_CAM_MAX_CNT[1], PARAM_MEDIAMODE_CNT[5]
+
+[08:18:31:051 INFO-PARAM]:PDT_PARAM_GetCamMediaCfg[912]:paramCfg->camMediaCfg[i].mediaModeSpecCfg[j].mediaMode=33, mediaModeAttr->mediaMode=33
+
+[08:18:31:057 INFO-media]:MEDIA_SwitchViVpssMode[40]:vcapPipeHdl[0] ViVpssMode[2]
+
+[08:18:31:058 INFO-media]:MEDIA_SwitchViVpssMode[40]:vcapPipeHdl[1] ViVpssMode[0]
+
+[08:18:31:077 INFO-system]:SS_SYSTEM_GetStartupWakeUpSource[39]:hi3519dv500 SS_SYSTEM_GetStartupWakeUpSource API not support
+
+[08:18:31:078 INFO-PARAM]:PDT_PARAM_GetCamMediaCfg[906]:OT_MEDIA_VCAP_CAM_MAX_CNT[1], PARAM_MEDIAMODE_CNT[5]
+
+[08:18:31:078 INFO-PARAM]:PDT_PARAM_GetCamMediaCfg[912]:paramCfg->camMediaCfg[i].mediaModeSpecCfg[j].mediaMode=33, mediaModeAttr->mediaMode=33
+
+[08:18:31:078 WARN-STATEMNG]:PDT_STATEMNG_IsNeedRebulidVideo[244]:old:2; new:2
+
+[08:18:31:079 INFO-STATEMNG]:PDT_STATEMNG_ResetVideoIn[437]:reset
+
+[08:18:31:084 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[0] x:-31526 y:-7418 z:1742 time:13450 nearest temp:2565
+
+[08:18:31:084 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[1] x:-19445 y:-20216 z:638 time:9345 nearest temp:1326
+
+[08:18:31:085 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[2] x:-45411 y:-13160 z:2822 time:5265 nearest temp:1999
+
+[08:18:31:085 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[3] x:-48658 y:-21192 z:6344 time:2245 nearest temp:2436
+
+[08:18:31:085 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[4] x:-48658 y:-21192 z:6344 time:2245 nearest temp:388
+
+[08:18:31:085 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[5] x:-53074 y:-23232 z:9366 time:2225 nearest temp:45
+
+[08:18:31:085 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[6] x:-57377 y:-24906 z:10253 time:2200 nearest temp:25
+
+[08:18:31:085 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[7] x:-59125 y:-26916 z:15369 time:2155 nearest temp:0
+
+[08:18:31:085 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[8] x:-51034 y:-13252 z:15344 time:2100 nearest temp:0
+
+[08:18:31:085 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[9] x:-58053 y:-5932 z:15793 time:735 nearest temp:40
+
+[08:18:31:085 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[10] x:-64981 y:-8265 z:14613 time:645 nearest temp:0
+
+[08:18:31:085 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[11] x:-65336 y:-6459 z:20542 time:15 nearest temp:2520
+
+[08:18:31:085 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[12] x:-65329 y:-6107 z:21312 time:150 nearest temp:0
+
+[08:18:31:085 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[13] x:-67634 y:-11412 z:30355 time:10 nearest temp:1556
+
+[08:18:31:085 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[14] x:-67634 y:-11412 z:30355 time:2147483647 nearest temp:2147483647
+
+[08:18:31:085 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[15] x:-67634 y:-11412 z:30355 time:2147483647 nearest temp:2147483647
+
+[08:18:31:086 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[16] x:-67634 y:-11412 z:30355 time:2147483647 nearest temp:2147483647
+
+[08:18:31:086 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[17] x:-67634 y:-11412 z:30355 time:2147483647 nearest temp:2147483647
+
+[08:18:31:086 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[18] x:-67634 y:-11412 z:30355 time:2147483647 nearest temp:2147483647
+
+[08:18:31:086 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[19] x:-67634 y:-11412 z:30355 time:2147483647 nearest temp:2147483647
+
+[08:18:31:430 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[20] x:-67634 y:-1141imu chip id: 0x67
+
+2 z:30355 time:2147483647 nearest temp:2147483647
+
+[08:18:31:430 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[21]set gyro odr is 800
+
+ x:-67634 y:-11412 z:30355 time:2147483647 nearest temp:2147483647
+
+[08:18:31:430 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsenset gyro fsr is 1024000
+
+sor[283]:read[22] x:-67634 y:-11412 z:30355 time:2147483647 nearest temp:2147483647
+
+[08:18:31:430 INFO-STATEMNG]:PDT_STATEset accel odr is 800
+
+MNG_InitMotionsensor[283]:read[23] x:-67634 y:-11412 z:30355 time:2147483647 nearest temp:2147483647
+
+[08:18:31:430 INFO-STset accel fsr is 16384
+
+ATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[24] x:-67634 y:-11412 z:30355 time:2147483647 nearest temp:2147483647
+
+[08:18:31:430 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[25] x:-67634 y:-11412 z:30355 time:2147483647 nearest temp:2147483647
+
+[08:18:31:430 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[26] x:-67634 y:-11412 z:30355 time:2147483647 nearest temp:2147483647
+
+[08:18:31:430 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[27] x:-67634 y:-11412 z:30355 time:2147483647 nearest temp:2147483647
+
+[08:18:31:430 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[28] x:-67634 y:-11412 z:30355 time:2147483647 nearest temp:2147483647
+
+[08:18:31:430 INFO-STATEMNG]:PDT_STATEMNG_InitMotionsensor[283]:read[29] x:-67634 y:-11412 z:30355 time:2147483647 nearest temp:2147483647
+
+sensor mipiExtData from DefaultAttr
+
+sensor mipiExtData devno 2
+
+[08:18:31:0591][VCAP_S][WARN] MAPI_VCAP_LoadMipiConfig:593 dc sensor's input_mode get from sensor cfg temporary.
+
+[08:18:31:0593][VCAP_S][WARN] MAPI_VCAP_LoadMipiConfig:603 dc sensor's input_data_type get from sensor cfg temporary.
+
+[08:18:31:0593][VCAP_S][ERR] MAPI_PERIPHERALMNG_SetAttr:26 vcapdev:2 used sensorType:28
+
+linear mode
+
+IMX258 4K2K_10BIT_30FPS init succuss!
+
+[08:18:31:0908][VPROC_S][ERR] MAPI_ADAPT_VPROC_SetPortRotation:766 dv500 this function is not supported currently
+
+[08:18:31:0909][VPROC_S][ERR] MAPI_ADAPT_VPROC_SetPortRotation:766 dv500 this function is not supported currently
+
+MEDIA_InitVencChn 499H264 video_full_range_flag 1
+
+MEDIA_InitVencChn 499H264 video_full_range_flag 1
+
+[08:18:31:918 INFO-STATEMNG]:PDT_STATEMNG_ResetVideoIn[443]:reset but VideoIn not init, do videoIn init.
+
+[08:18:31:920 INFO-STATEMNG]:SS_PDT_STATEMNG_IsNeedRebuildAudio[606]:need rebuild audio
+
+[08:18:31:920 INFO-init]:PDT_INIT_ResetAudio[375]:AudioInNeedReset.
+
+[08:18:31:920 WARN-media]:SS_MEDIA_DeinitAudioIn[55]:AudioIn or Media has been Deinitialized
+
+[08:18:31:976 INFO-init]:PDT_INIT_ResetAudio[386]:AudioOutNeedReset.
+
+[08:18:31:976 WARN-media]:SS_MEDIA_StopAudioOut[152]:The AudioOut or Media has not been initialized
+
+[08:18:31:976 INFO-init]:SS_PDT_INIT_SERVICE_Init[488]:MediaWatchdog Timer: 0.01 initialized. default_margin = 10 sec (nodeamon = 1)
+
+Init success
+
+[08:18:31:976 INFO-init]:PDT_Init[194]:liteos start main_app: 0 ms
+
+ot_wtdg init ok. ver=Jan  3 2025, 08:15:21.
+
+[08:18:32:0031][OT_UPROC][FATAL] SS_PROC_Init:101 Open hi_userproc err!
+
+[08:18:32:0031][OT_UPROC][ERR] SS_UPROC_Init:300 UPROC init error ret:-1
+
+[08:18:32:0041][OT_UPROC][FATAL] SS_PROC_Init:101 Open hi_userproc err!
+
+[08:18:32:0041][OT_UPROC][ERR] SS_UPROC_Init:300 UPROC init error ret:-1
+
+[08:18:32:0041][HFSM][ERR] SS_HFSM_EnableProc:109 proc add entry fail
+
+[08:18:32:042 INFO-RecMng]:SS_RECMNG_Init[1145]:InitRecMng
+
+[08:18:32:047 INFO-system]:SS_SYSTEM_GetStartupWakeUpSource[39]:hi3519dv500 SS_SYSTEM_GetStartupWakeUpSource API not support
+
+[08:18:32:049 INFO-PARAM]:PDT_PARAM_GetCamMediaCfg[906]:OT_MEDIA_VCAP_CAM_MAX_CNT[1], PARAM_MEDIAMODE_CNT[5]
+
+[08:18:32:049 INFO-PARAM]:PDT_PARAM_GetCamMediaCfg[912]:paramCfg->camMediaCfg[i].mediaModeSpecCfg[j].mediaMode=33, mediaModeAttr->mediaMode=33
+
+[08:18:32:049 INFO-storagemng]:SS_STORAGEMNG_Create[441]:[0]:devPath[/dev/mmcblk0p1] mntPath[/app/sd/] MediumType[0] devPortNo[0]
+
+[08:18:32:052 INFO-STATEMNG]:PDT_STATEMNG_ResetMediaWithService[694]:reset media
+
+[08:18:32:053 INFO-STATEMNG]:PDT_STATEMNG_MediaRelatedServiceStop[627]:remove Stream!
+
+(ot_scene_pause-1033:1): sceneauto not init yet!
+
+[08:18:32:057 INFO-STATEMNG]:PDT_STATEMNG_MediaRelatedServiceStop[633]:SCENE_Pause 80000002
+
+(ot_scene_deinit-941:1): sceneauto not init yet!
+
+[08:18:32:058 random: crng init done
+
+INFO-STATEMNG]:PDT_STATEMNG_MediaRelatedServiceStop[636]:SCENE_Deinit 80000002
+
+[08:18:32:058 INFO-STATEMNG]:SS_PDT_STATEMNG_IsNeedRebuildAudio[606]:need rebuild audio
+
+[08:18:32:058 INFO-STATEMNG]:PDT_STATEMNG_StopAudio[105]:fastboot ignore first vo and ao stop
+
+[08:18:32:058 WARN-STATEMNG]:PDT_STATEMNG_IsNeedRebulidVideo[244]:old:2; new:2
+
+[08:18:32:058 INFO-STATEMNG]:PDT_STATEMNG_ResetVideoIn[437]:reset
+
+[08:18:32:058 INFO-media]:MEDIA_ResetVideoIn[58]:Video Param is Not Change
+
+[08:18:32:058 WARN-media]:SS_MEDIA_InitAudioIn[29]:AudioIn already Init
+
+[08:18:32:058 WARN-media]:SS_MEDIA_StartAudioOut[132]:AudioOut already Init
+
+[08:18:32:0073][OT_UPROC][FATAL] SS_PROC_Init:101 Open hi_userproc err!
+
+[08:18:32:0073][OT_UPROC][ERR] SS_UPROC_Init:300 UPROC init error ret:-1
+
+filename is /app/lib/libffmpeg_demuxer.so
+
+[08:18:32:085 INFO-storagemng]:STORAGEMNG_OnStateChange[369]:DevPath[/dev/mmcblk0p1] State[4]
+
+[08:18:32:0088][FSTOOL][WARN] SS_FSTOOL_Check:255 BERRY FSTOOL MW Version: 2.0.1.0
+
+[08:18:32:097 INFO-UI]:PDT_UI_ProcStateMsgCallback[360]:EventID:0x10430004, arg1:0, arg2:0, result:0
+
+[08:18:32:098 INFO-UI]:PDT_UI_ProcStorageEvents[146]:OT_EVENT_STORAGEMNG_FS_CHECKING[08:18:32:100 INFO-datatransfer]:Datatransfer_EventProc[3421]:EventID: 0x10430004
+
+[08:18:32:0117][FSTOOL][WARN] FSTOOL_IsFSDirty:24 File system is clean !
+
+[08:18:32:167 INFO-STATEMNG]:PDT_STATEMNG_InitScene[507]:SCENE_Init(/app/sceneauto/sceneparam.bin) OK
+
+[08:18:32:168 INFO-PARAM]:PDT_PARAM_GetCamMediaCfg[906]:OT_MEDIA_VCAP_CAM_MAX_CNT[1], PARAM_MEDIAMODE_CNT[5]
+
+[08:18:32:168 INFO-PARAM]:PDT_PARAM_GetCamMediaCfg[912]:paramCfg->camMediaCfg[i].mediaModeSpecCfg[j].mediaMode=33, mediaModeAttr->mediaMode=33
+
+[Func]:isp_drc_attr_check [Line]:389 [Info]:Err mpi curve_select: 2!
+
+Failed at ot_scene_set_static_drc: LINE: 449 with 0xa01c8007![08:18:32:188 INFO-STATEMNG]:PDT_STATEMNG_SetSceneMode[581]:SCENE_SetSceneMode OK
+
+[08:18:32:188 INFO-STATEMNG]:PDT_STATEMNG_MediaRelatedServiceStart[609]:SCENE_Resume OK
+
+[08:18:32:189 INFO-STATEMNG]:PDT_STATEMNG_AddRtspStreamsByType[1436]:add [ 1 ]: venc[ 1 ] aenc[ 0 ]
+
+[08:18:32:189 INFO-deepsea_liveserver]:LIVESVR_StartVideoSource[461]:StartVideoSource
+
+[08:18:32:192 INFO-datatransfer]:check_and_repaire_flash[4872]:going to check and repaire flash.
+
+[08:18:32:196 INFO-datatransfer]:Datatransfer_EventProc[3421]:EventID: 0x104c1000
+
+[08:18:32:196 INFO-UI]:PDT_UI_ProcStateMsgCallback[360]:EventID:0x104c1000, arg1:0, arg2:0, result:0
+
+[08:18:32:0196][EVTHUB][ERR] SS_EVTHUB_GetEventHistory:308 getEventHistory error return 0xa1328047
+
+[08:18:32:196 WARN-UI]:PDT_UI_CheckStateAndStartRecord[189]:Sdcard available not received!
+
+[08:18:32:211 INFO-datatransfer]:check_and_repaire_flash[4882]:data partition size is 248816 KB
+
+[08:18:32:212 INFO-datatransfer]:check_and_repaire_flash[4884]:data partition is OK!
+
+*** Board tools : ver0.0.1_20121120 ***
+
+[debug]: {source/utils/cmdshell.c:68}cmdstr:bspmm
+
+0x179f0014: 0x00001201 --> 0x00001630
+
+[END]
+
+[08:18:32:221 INFO-]:SS_System[630]:pid status.[0]
+
+[08:18:32:241 INFO-]:SS_System[630]:pid status.[0]
+
+[08:18:32:243 INFO-datatransfer]:init_upload_file_context[569]:Init upload file context OK!
+
+[08:18:32:248 INFO-upgrade]:UPGRADE_ParseProcCmdline[540]:procCmdLine[335 Bytes]:mem=512M console=ttyAMA0,115200 clk_ignore_unused root=ubi0:ubifs rootfstype=ubifs rw ubi.mtd=6  mtdparts=nand:1M(boot_image.bin),1M(bl31.bin),1M(rawparam),1M(rawparambak),1M(resImage),15M(uImage),32M(rootfs.ubifs),64M(appfs.ubifs),1M(_rawparam),1M(_rawparambak),1M(_resImage),15M(_uImage),32M(_rootfs.ubifs),64M(_appfs.ubifs),-(data)
+
+
+
+[08:18:32:249 INFO-upgrade]:UPGRADE_ParseDevNo[353]:devName:ubi.mtd=6
+
+[08:18:32:249 INFO-upgrade]:UPGRADE_ParseRootfsInfo[391]:found rootfs devNo=6
+
+[08:18:32:249 INFO-upgrade]:UPGRADE_ParseRootfsInfo[408]:ubi found
+
+[08:18:32:254 INFO-datatransfer]:DataTransfer_LoadWIFI[4813]:Device model:AtomSEV3
+
+[08:18:32:254 INFO-datatransfer]:DataTransfer_LoadWIFI[4814]:Software version:V3.1.2
+
+[08:18:32:264 INFO-datatransfer]:thread_DT2[4556]:start it firmware upgrade thread...
+
+[08:18:32:273 INFO-]:SS_System[630]:pid status.[0]
+
+[08:18:32:274 INFO-datatransfer]:set_wifi_config[115]:ssid: (null), pwd: 854bfe57
+
+[08:18:32:289 INFO-]:SS_System[630]:pid status.[0]
+
+wifi vendor id: f192
+
+using deepsea wifi.
+
+set wifi in normal mode.
+
+[08:18:32:0630][FSTOOL][WARN] FSCK_FAT_CheckFragment:229 total file cnt:53, file segment cnt:2204, free segment cnt:0, vlu:40.814816
+
+[08:18:32:0631][FSTOOL][ERR] FSCK_FAT_CheckFragment:232 fs fragment severly
+
+[08:18:32:0632][FSTOOL][WARN] ReleaseResources:247 FSCheck is oFAT-fs (mmcblk0p1): utf8 is not a recommended IO charset for FAT filesystems, filesystem will be case sensitive!
+
+ver
+
+usbcore: registered new interface driver rtl8192fu
+
+[08:18:32:811 INFO-storagemng]:STORAGEMNG_OnStateChange[369]:DevPath[/dev/mmcblk0p1] State[7]
+
+[08:18:32:824 INFO-UI]:PDT_UI_ProcStateMsgCallback[360]:EventID:0x10430007, arg1:0, arg2:0, result:0
+
+[08:18:32:824 INFO-UI]:PDT_UI_ProcStorageEvents[166]:OT_EVENT_STORAGEMNG_MOUNTED
+
+[08:18:32:825 INFO-STATEMNG]:PDT_STATEMNG_BaseStateProcMountedMsg[199]:Current powerOnState is 9.
+
+[08:18:32:832 INFO-datatransfer]:Datatransfer_EventProc[3421]:EventID: 0x10430007
+
+[08:18:33:066 INFO-STATEMNG]:PDT_STATEMNG_InitFileMng[145]:DCF: WarningStage[256]
+
+[08:18:33:0071][OT_UPROC][FATAL] SS_PROC_Init:101 Open hi_userproc err!
+
+[08:18:33:0071][OT_UPROC][ERR] SS_UPROC_Init:300 UPROC init error ret:-1
+
+[08:18:33:088 INFO-datatransfer]:Datatransfer_EventProc[3421]:EventID: 0x10404003
+
+[08:18:33:092 INFO-datatransfer]:get_photo_record_remain[201]:st.s32SDFreeSpace = 111720 bitrate = 51200 remain size = 17416s warning state = 256
+
+[08:18:33:093 INFO-datatransfer]:notify_sd_card_status[1858]:action = 1 st = 1, formatting = 0
+
+[08:18:33:107 INFO-FILEMNG]:FILEMNG_ScanEvent[53]:The whole directory scan done
+
+[08:18:33:116 INFO-datatransfer]:Datatransfer_EventProc[3421]:EventID: 0x10404008
+
+[08:18:33:116 INFO-datatransfer]:get_photo_record_remain[201]:st.s32SDFreeSpace = 111720 bitrate = 51200 remain size = 17416s warning state = 256
+
+sh (1362): drop_caches: 3
+
+[08:18:33:280 INFO-]:SS_System[630]:pid status.[0]
+
+[08:18:33:0283][HFSM][WARN] HandleMessage:110 processMsg what:272826375 used time 459 ms
+
+[08:18:33:296 INFO-UI]:PDT_UI_ProcStateMsgCallback[360]:EventID:0x104c1006, arg1:0, arg2:0, result:0
+
+[08:18:33:300 WARN-]:parse_acquire_type[72]:No data_log path found in sdcard, ignore logging data
+
+[08:18:33:304 INFO-datatransfer]:Datatransfer_EventProc[3421]:EventID: 0x104c1006
+
+[08:18:33:305 INFO-datatransfer]:get_photo_record_remain[201]:st.s32SDFreeSpace = 111720 bitrate = 51200 remain size = 17416s warning state = 256
+
+/dev/mmcblk0p1 /app/sd vfat rw,noexec,noatime,nodiratime,fmask=0022,dmask=0022,codepage=437,iocharset=utf8,shortname=mixed,errors=remount-ro 0 0
+
+[08:18:33:331 INFO-]:SS_System[630]:pid status.[0]
+
+[08:18:33:332 INFO-UI]:PDT_UI_CheckSdcardUpgrade[266]:No upgrade config(/app/sd/config) exist in sdcard
+
+[08:18:33:332 INFO-UI]:PDT_UI_CheckSdcardUpgrade[299]:Software mode is different or version is same, ignore upgrade!
+
+[08:18:33:332 INFO-system]:SS_SYSTEM_GetStartupWakeUpSource[39]:hi3519dv500 SS_SYSTEM_GetStartupWakeUpSource API not support
+
+[08:18:33:332 INFO-UI]:PDT_UI_ProcSdAvailable[271]:SD_AVAILABLE event
+
+[08:18:33:0332][EVTHUB][ERR] SS_EVTHUB_GetEventHistory:308 getEventHistory error return 0xa1328047
+
+[08:18:33:332 INFO-UI]:PDT_UI_ProcessStorageMountedEvent[60]:sd available is true
+
+SSID set to Potensic AtomSEV3_17ACBF
+
+[deasea_test]=SSID:Potensic AtomSEV3_17ACBF
+
+Configuration file: /dev/hostapd.conf
+
+start_addr=(0x2000), end_addr=(0x10000), buffer_size=(0xe000), smp_number_max=(7168)
+
+rfkill: Cannot open RFKILL control device
+
+Using interface wlan0 with hwaddr 38:7a:cc:17:ac:bf and ssid "Potensic AtomSEV3_17ACBF"
+
+WPS: Converting display to virtual_display for WPS 2.0 compliance
+
+WPS: Converting push_button to virtual_push_button for WPS 2.0 compliance
+
+IPv6: ADDRCONF(NETDEV_CHANGE): wlan0: link becomes ready
+
+wlan0: interface state UNINITIALIZED->ENABLED
+
+wlan0: AP-ENABLED
+
+/app/bin/hostapd
+
+IPv6: ADDRCONF(NETDEV_CHANGE): wlan0: link becomes ready
+
+/app/start_wifi.sh: line 104: udhcpd: not found
+
+wlan0    efuse_set:wmap
+
+start wifi finish!
+
+[08:18:35:730 INFO-]:SS_System[630]:pid status.[0]
+
+uart-pl011 11041000.uart: no DMA platform data
+
+[08:18:35:743 INFO-datatransfer]:thread_monitor[4384]:waiting for connection
+
+[08:18:35:744 INFO-datatransfer]:init_debug_fc_datalink[5144]:init debug fc datalink OK!
+
+[08:18:35:770 INFO-]:DS_System[684]:ret = 0, cmd=(echo 0 > /sys/module/rtl8192eu/parameters/rtw_flying)
+
+[08:18:35:771 INFO-]:DS_System[686]:Process exited with status 0
+
+[08:18:35:793 INFO-]:SS_GetBootEnv[266]:Get env:status=0
+
+
+
+[08:18:35:794 INFO-datatransfer]:update_camera_upgrade_status[2883]:boot status is 0
+
+[08:18:35:794 INFO-datatransfer]:sdcard_available_handler[3411]:SD card is available!
+
+[08:18:35:802 INFO-]:SS_System[630]:pid status.[0]
+
+[08:18:35:802 INFO-datatransfer]:get_photo_record_remain[201]:st.s32SDFreeSpace = 111720 bitrate = 51200 remain size = 17416s warning state = 256
+
+[08:18:35:805 INFO-datatransfer]:start_a_thread_to_check_big_pack_upgrade_from_sdcard[4401]:going to start a thread to check big pack upgrade from sdcard...
+
+[08:18:35:809 INFO-datatransfer]:start_factory_burnin_test[3282]:checking factory burnin test file </app/sd/depstech_factory_burnin_test.txt>
+
+[08:18:35:810 INFO-datatransfer]:start_factory_burnin_test[3284]:factory burnin test file </app/sd/depstech_factory_burnin_test.txt> not exist!
+
+[08:18:35:810 INFO-datatransfer]:NFZ_CheckUpdatingFromSdcard[1834]:update from sdcard nfz version file(/app/sd/nfz/version.txt) not found.
+
+[08:18:35:815 INFO-datatransfer]:thread_check_big_pack_upgrade_from_sdcard[4381]:force upgrade file not found.
+
+[08:18:35:815 WARN-datatransfer]:thread_check_big_pack_upgrade_from_sdcard[4388]:Can not open firmware file </app/sd/atomsev3.bin>: No such file or directory
+
+[08:18:35:834 INFO-datatransfer]:loadData[1063]:nfz load data Finish. OK count = 0, Error count = 238
+
+[08:18:35:837 INFO-datatransfer]:loadData[1064]:OK region:
+
+
+
+[08:18:35:837 INFO-datatransfer]:loadData[1075]:Error region:
+
+AE AF AG AI AL AM AO AR AS AT AU AW AZ BA BB BD BE BF BG BH BI BJ BL BM BN BO BQ BR BS BT BW BY
+
+BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CW CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES
+
+ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GT GU GW GY HK HN HR HT HU ID IE
+
+IL IM IN IO IQ IR IS IT JE JM JO JP KE KG KH KI KM KN KP KR KV KW KY KZ LA LB LC LI LK LR LS LT
+
+LU LV LY MA MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL
+
+NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PR PT PW PY QA RE RM RO RS RU RW SA SB SC SD SE SG SH
+
+SI SK SL SN SO SR SS ST SV SX SY SZ TC TD TG TH TJ TL TM TN TO TR TT TV TW TZ UA UG UK UM US UY
+
+UZ VC VE VG VI VN VU WF WS YE YT ZA ZM ZW
+
+
+
+[08:18:35:837 INFO-datatransfer]:loadData[1088]:nfz load data cost: 23 ms
+
+[08:18:36:816 INFO-datatransfer]:start_a_thread_to_check_big_pack_upgrade[4775]:before starting a thread to check upgrading...
+
+[08:18:36:816 INFO-sensor]:PDT_OpticalFlowSensor_Init[534]:init optical flow sensor ...
+
+[08:18:36:817 INFO-datatransfer]:thread_check_upgrade[4714]:check if firmware</data/upgrading/atomsev3.bin> exist.
+
+linear mode
+
+[Func]:isp_check_dng_color_param [Line]:228 [Info]:ccm_tab1.color_temp should between [2000, 10000] in cmos!
+
+[Func]:isp_check_dng_color_param [Line]:233 [Info]:ccm_tab2.color_temp should between [2000, 10000] in cmos!
+
+[08:18:36:929 INFO-sensor]:gc1084_640x360p60_init[308]:========================================================================
+
+[08:18:36:929 INFO-sensor]:gc1084_640x360p60_init[309]:vi_pipe:2,== gc1084 24Mclk 60fps(MIPI) 10bit linear init success! ==
+
+icap_int_status:0, vicap_int_mask:10f7f0f No available int!
+
+[m[08:18:36:929 INFO-sensor]:gc1084_640x360p60_init[310]:========================================================================
+
+[08:18:36:931 INFO-sensor]:GC1084_ISP_Thread[189]:ISP Dev 2 running !
+
+[08:18:36:931 INFO-sensor]:PDT_OpticalFlowSensor_Init[696]:create DynamicAE thread...
+
+[08:18:36:933 INFO-sensor]:PDT_OpticalFlowSensor_Init[706]:init optical flow sensor ok!
+
+[08:18:36:961 INFO-init]:main[549]:PDT_INIT_Init end
+
+[08:18:36:963 INFO-sensor]:thread_DynamicAE[456]:start gc1084(pipe 2) dynamic_ae
+
+[08:18:39:021 INFO-datatransfer]:notify_sensor_status[310]:Notify sensor status:0x0, code:0x0
+
+[08:18:39:832 ERROR-datatransfer]:get_esc_device_id_from_file[4452]:fopen /data/upgrading/dev_id/esc error: No such file or directory
+
+[08:18:39:833 INFO-datatransfer]:handler_get_air_upgrade_info_response[4524]:get response of get air upgrade info.
+
+[08:18:39:833 INFO-datatransfer]:handler_get_air_upgrade_info_response[4525]:FC[0xB6]: 3.7.1
+
+[08:18:39:833 INFO-datatransfer]:handler_get_air_upgrade_info_response[4527]:ESC[0xFF]: 0.0.0
+
+[08:18:39:833 INFO-datatransfer]:handler_get_air_upgrade_info_response[4530]:Gimbal[0xFF]: 255.255.255
+
+[08:18:39:833 INFO-datatransfer]:handler_get_air_upgrade_info_response[4533]:BMS[0x70]: 1.5.3
+
+[08:18:40:853 INFO-datatransfer]:display_dt_status[503]:dt_connected: 0, fd_dt = -1; itg_connected: 0, fd_dt2 = -1; cam_app_connected: 0, fd_cam_app = -1, cam_rc_connected: 0, fd_cam_rc = -1
+
+[08:18:41:756 INFO-datatransfer]:Time_Sync_Proc[108]:Time sync success: max -828623 ms, min -828623
+
+[08:18:42:263 INFO-datatransfer]:notify_sensor_status[310]:Notify sensor status:0x0, code:0x0
+
+[08:18:43:007 INFO-datatransfer]:thread_monitor[4410]:Going to accept p_sock->port: 8886, srv_fd: 60
+
+[08:18:43:008 INFO-datatransfer]:thread_monitor[4416]:[TCP_PORT:8886] a new connection(73) accepted.
+
+[08:18:43:008 INFO-datatransfer]:thread_monitor[4423]:[TCP-PORT:8886] A new client(73) was connected. try to close the old one(-1).
+
+[08:18:43:008 INFO-datatransfer]:thread_monitor[4448]:datatransfer link connected
+
+[08:18:43:008 INFO-datatransfer]:thread_monitor[4384]:waiting for connection
+
+[08:18:44:074 INFO-PARAM]:PDT_PARAM_GetCamMediaCfg[906]:OT_MEDIA_VCAP_CAM_MAX_CNT[1], PARAM_MEDIAMODE_CNT[5]
+
+[08:18:44:074 INFO-PARAM]:PDT_PARAM_GetCamMediaCfg[912]:paramCfg->camMediaCfg[i].mediaModeSpecCfg[j].mediaMode=33, mediaModeAttr->mediaMode=33
+
+[08:18:44:074 INFO-datatransfer]:DataTransfer_update_rtsp_bitrate[1928]:bitrate set to 2048 kbps
+
+[08:18:44:948 INFO-datatransfer]:parse_big_pack_header[2028]:going to parse big pack header...
+
+[08:18:44:949 INFO-datatransfer]:parse_big_pack_header[2075]:header_len = 3109, buf[0~3]: 25 0c 00 00
+
+[08:18:44:951 INFO-datatransfer]:parse_big_pack_header[2118]:big pack version: 1.6.7
+
+[08:18:44:954 INFO-datatransfer]:big_pack_upgrade_check_upgrade_condition[4025]:[bms] currently running version is 1.5.3, version of firmware file is : 1.5.3
+
+[08:18:44:954 WARN-datatransfer]:big_pack_upgrade_check_upgrade_condition[4033]:[bms] No need to upgrade! current version is 1.5.3, try to upgrade version is 1.5.3
+
+[08:18:44:954 WARN-datatransfer]:big_pack_upgrade_check_upgrade_condition[4019]:[bms] device id not match! (running 0x70) != (firmware 0x71)
+
+[08:18:44:954 WARN-datatransfer]:big_pack_upgrade_check_upgrade_condition[4019]:[bms] device id not match! (running 0x70) != (firmware 0x73)
+
+[08:18:44:954 INFO-datatransfer]:big_pack_upgrade_check_upgrade_condition[4025]:[fcs] currently running version is 3.7.1, version of firmware file is : 3.7.1
+
+[08:18:44:954 WARN-datatransfer]:big_pack_upgrade_check_upgrade_condition[4033]:[fcs] No need to upgrade! current version is 3.7.1, try to upgrade version is 3.7.1
+
+[08:18:44:954 INFO-datatransfer]:big_pack_upgrade_check_upgrade_condition[4025]:[cam] currently running version is 3.1.2, version of firmware file is : 3.1.2
+
+[08:18:44:954 WARN-datatransfer]:big_pack_upgrade_check_upgrade_condition[4033]:[cam] No need to upgrade! current version is 3.1.2, try to upgrade version is 3.1.2
+
+[08:18:44:954 WARN-datatransfer]:big_pack_upgrade_check_upgrade_condition[3991]:[itg] not connected ! so will not upgrade!
+
+[08:18:44:954 WARN-datatransfer]:big_pack_upgrade_check_upgrade_condition[3991]:[itg] not connected ! so will not upgrade!
+
+[08:18:44:954 WARN-datatransfer]:big_pack_upgrade_check_upgrade_condition[3938]:RC not connected ! so will not upgrade!
+
+[08:18:44:955 INFO-datatransfer]:thread_check_upgrade[4759]:no need to upgrade.
+
+[08:18:45:016 INFO-datatransfer]:thread_monitor[4410]:Going to accept p_sock->port: 8888, srv_fd: 63
+
+[08:18:45:016 INFO-datatransfer]:thread_monitor[4416]:[TCP_PORT:8888] a new connection(74) accepted.
+
+[08:18:45:016 INFO-datatransfer]:thread_monitor[4423]:[TCP-PORT:8888] A new client(74) was connected. try to close the old one(-1).
+
+[08:18:45:017 INFO-datatransfer]:thread_monitor[4459]:CAM - RC connected.
+
+[08:18:45:017 INFO-datatransfer]:start_a_thread_to_check_big_pack_upgrade_gnd[4794]:gnd socket is not ready, big pack upgrade will not start!
+
+[08:18:45:017 INFO-datatransfer]:thread_monitor[4384]:waiting for connection
+
+[08:18:45:509 INFO-datatransfer]:notify_sensor_status[310]:Notify sensor status:0x0, code:0x0
+
+[08:18:46:016 INFO-datatransfer]:display_dt_status[503]:dt_connected: 1, fd_dt = 73; itg_connected: 0, fd_dt2 = -1; cam_app_connected: 0, fd_cam_app = -1, cam_rc_connected: 1, fd_cam_rc = 74
+
+[08:18:46:017 INFO-datatransfer]:thread_monitor[4410]:Going to accept p_sock->port: 8885, srv_fd: 61
+
+[08:18:46:017 INFO-datatransfer]:thread_monitor[4416]:[TCP_PORT:8885] a new connection(75) accepted.
+
+[08:18:46:018 INFO-datatransfer]:thread_monitor[4423]:[TCP-PORT:8885] A new client(75) was connected. try to close the old one(-1).
+
+[08:18:46:018 INFO-datatransfer]:thread_monitor[4450]:datatransfer link2 connected
+
+[08:18:46:018 INFO-datatransfer]:start_a_thread_to_check_big_pack_upgrade[4775]:before starting a thread to check upgrading...
+
+[08:18:46:018 INFO-datatransfer]:thread_monitor[4384]:waiting for connection
+
+[08:18:46:021 INFO-datatransfer]:thread_check_upgrade[4714]:check if firmware</data/upgrading/atomsev3.bin> exist.
+
+[08:18:48:017 INFO-datatransfer]:thread_monitor[4410]:Going to accept p_sock->port: 8889, srv_fd: 62
+
+[08:18:48:017 INFO-datatransfer]:thread_monitor[4416]:[TCP_PORT:8889] a new connection(76) accepted.
+
+[08:18:48:017 INFO-datatransfer]:thread_monitor[4423]:[TCP-PORT:8889] A new client(76) was connected. try to close the old one(-1).
+
+[08:18:48:017 INFO-datatransfer]:thread_monitor[4457]:CAM - APP connected.
+
+[08:18:48:017 INFO-datatransfer]:thread_monitor[4384]:waiting for connection
+
+[08:18:48:765 INFO-datatransfer]:notify_sensor_status[310]:Notify sensor status:0x0, code:0x0
+
+[08:18:49:032 ERROR-datatransfer]:get_esc_device_id_from_file[4452]:fopen /data/upgrading/dev_id/esc error: No such file or directory
+
+[08:18:49:032 INFO-datatransfer]:handler_get_air_upgrade_info_response[4524]:get response of get air upgrade info.
+
+[08:18:49:032 INFO-datatransfer]:handler_get_air_upgrade_info_response[4525]:FC[0xB6]: 3.7.1
+
+[08:18:49:033 INFO-datatransfer]:handler_get_air_upgrade_info_response[4527]:ESC[0xFF]: 0.0.0
+
+[08:18:49:033 INFO-datatransfer]:handler_get_air_upgrade_info_response[4530]:Gimbal[0xFF]: 255.255.255
+
+[08:18:49:033 INFO-datatransfer]:handler_get_air_upgrade_info_response[4533]:BMS[0x70]: 1.5.3
+
+[08:18:49:848 INFO-datatransfer]:disconnect_dt_ctrl[541]:DT disconnected. close all tcp connections!
+
+[08:18:49:879 INFO-]:SS_System[630]:pid status.[0]
+
+[08:18:49:880 INFO-datatransfer]:generate_random_pwd[162]:new wifi pwd: d5a9a0c9
+
+[08:18:49:888 INFO-datatransfer]:receive_data_from_DT2[857]:DT2 disconnected ?
+
+[08:18:49:888 ERROR-datatransfer]:get_packet[437]:[dt2], get header error: ret = -1
+
+[08:18:49:890 INFO-datatransfer]:receive_data_from_DT[4220]:DT disconnected ?
+
+[08:18:49:891 ERROR-datatransfer]:get_dt_packet[4168]:[dt], get header error: ret = -1
+
+[08:18:49:892 ERROR-datatransfer]:receive_data_from_RC_to_CAM[738]:read error, RC-CAM disconnected.
+
+[08:18:49:892 ERROR-datatransfer]:get_packet[437]:[rc->cam], get header error: ret = -1
+
+[08:18:49:904 ERROR-datatransfer]:_receive_data_from_APP_to_CAM[4492]:read error, APP-CAM disconnected.
+
+[08:18:49:905 ERROR-datatransfer]:receive_data_buffer[245]:read data error! ret = -1
+
+[08:18:49:913 INFO-]:SS_System[630]:pid status.[0]
+
+[08:18:49:913 INFO-datatransfer]:set_wifi_config[115]:ssid: (null), pwd: d5a9a0c9
+
+[08:18:49:942 INFO-]:SS_System[630]:pid status.[0]
+
+[08:18:50:881 INFO-datatransfer]:display_dt_status[503]:dt_connected: 0, fd_dt = -1; itg_connected: 0, fd_dt2 = -1; cam_app_connected: 0, fd_cam_app = -1, cam_rc_connected: 0, fd_cam_rc = -1
+
+[08:18:52:017 INFO-datatransfer]:notify_sensor_status[310]:Notify sensor status:0x0, code:0x0
+
+[08:18:52:159 INFO-]:SS_System[630]:pid status.[0]
+
+Configuration file: /dev/hostapd.conf.tmp
+
+rfkill: Cannot open RFKILL control device
+
+Using interface wlan0 with hwaddr 38:7a:cc:17:ac:bf and ssid "Potensic AtomSEV3_17ACBF"
+
+WPS: Converting display to virtual_display for WPS 2.0 compliance
+
+WPS: Converting push_button to virtual_push_button for WPS 2.0 compliance
+
+IPv6: ADDRCONF(NETDEV_CHANGE): wlan0: link becomes ready
+
+wlan0: interface state UNINITIALIZED->ENABLED
+
+wlan0: AP-ENABLED
+
+Selected interface 'wlan0'
+
+wlan0: WPS-PBC-ACTIVE
+
+OK
+
+[08:18:53:261 INFO-]:SS_System[630]:pid status.[0]
+
+[08:18:53:261 INFO-datatransfer]:enter_matching_mode[277]:enter matching mode !
+
+[08:18:53:261 INFO-datatransfer]:thread_matching_timeout[179]:Wait for matching finish. 0/120
+
+[08:18:53:262 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+[08:18:53:262 INFO-datatransfer]:enter_matching_mode[220]:alread in matching mode. STATUS: wait to send token
+
+[08:18:53:273 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+[08:18:53:274 INFO-datatransfer]:enter_matching_mode[220]:alread in matching mode. STATUS: wait to send token
+
+[08:18:53:284 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+[08:18:53:284 INFO-datatransfer]:enter_matching_mode[220]:alread in matching mode. STATUS: wait to send token
+
+[08:18:53:298 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+[08:18:53:298 INFO-datatransfer]:enter_matching_mode[220]:alread in matching mode. STATUS: wait to send token
+
+[08:18:53:310 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+[08:18:53:311 INFO-datatransfer]:enter_matching_mode[220]:alread in matching mode. STATUS: wait to send token
+
+[08:18:53:331 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+[08:18:53:332 INFO-datatransfer]:enter_matching_mode[220]:alread in matching mode. STATUS: wait to send token
+
+[08:18:53:348 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+[08:18:53:348 INFO-datatransfer]:enter_matching_mode[220]:alread in matching mode. STATUS: wait to send token
+
+[08:18:53:368 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+[08:18:53:848 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+[08:18:54:144 INFO-datatransfer]:parse_big_pack_header[2028]:going to parse big pack header...
+
+[08:18:54:145 INFO-datatransfer]:parse_big_pack_header[2075]:header_len = 3109, buf[0~3]: 25 0c 00 00
+
+[08:18:54:145 INFO-datatransfer]:parse_big_pack_header[2118]:big pack version: 1.6.7
+
+[08:18:54:147 INFO-datatransfer]:big_pack_upgrade_check_upgrade_condition[4025]:[bms] currently running version is 1.5.3, version of firmware file is : 1.5.3
+
+[08:18:54:147 WARN-datatransfer]:big_pack_upgrade_check_upgrade_condition[4033]:[bms] No need to upgrade! current version is 1.5.3, try to upgrade version is 1.5.3
+
+[08:18:54:147 WARN-datatransfer]:big_pack_upgrade_check_upgrade_condition[4019]:[bms] device id not match! (running 0x70) != (firmware 0x71)
+
+[08:18:54:147 WARN-datatransfer]:big_pack_upgrade_check_upgrade_condition[4019]:[bms] device id not match! (running 0x70) != (firmware 0x73)
+
+[08:18:54:147 INFO-datatransfer]:big_pack_upgrade_check_upgrade_condition[4025]:[fcs] currently running version is 3.7.1, version of firmware file is : 3.7.1
+
+[08:18:54:147 WARN-datatransfer]:big_pack_upgrade_check_upgrade_condition[4033]:[fcs] No need to upgrade! current version is 3.7.1, try to upgrade version is 3.7.1
+
+[08:18:54:147 INFO-datatransfer]:big_pack_upgrade_check_upgrade_condition[4025]:[cam] currently running version is 3.1.2, version of firmware file is : 3.1.2
+
+[08:18:54:147 WARN-datatransfer]:big_pack_upgrade_check_upgrade_condition[4033]:[cam] No need to upgrade! current version is 3.1.2, try to upgrade version is 3.1.2
+
+[08:18:54:147 WARN-datatransfer]:big_pack_upgrade_check_upgrade_condition[3991]:[itg] not connected ! so will not upgrade!
+
+[08:18:54:147 WARN-datatransfer]:big_pack_upgrade_check_upgrade_condition[3991]:[itg] not connected ! so will not upgrade!
+
+[08:18:54:147 WARN-datatransfer]:big_pack_upgrade_check_upgrade_condition[3938]:RC not connected ! so will not upgrade!
+
+[08:18:54:147 INFO-datatransfer]:thread_check_upgrade[4759]:no need to upgrade.
+
+[08:18:54:264 INFO-datatransfer]:thread_matching_timeout[179]:Wait for matching finish. 1/120
+
+[08:18:54:348 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+[08:18:54:853 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+[08:18:55:263 INFO-datatransfer]:notify_sensor_status[310]:Notify sensor status:0x0, code:0x0
+
+[08:18:55:268 INFO-datatransfer]:thread_matching_timeout[179]:Wait for matching finish. 2/120
+
+[08:18:55:349 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+[08:18:55:849 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+[08:18:56:048 INFO-datatransfer]:display_dt_status[503]:dt_connected: 0, fd_dt = -1; itg_connected: 0, fd_dt2 = -1; cam_app_connected: 0, fd_cam_app = -1, cam_rc_connected: 0, fd_cam_rc = -1
+
+[08:18:56:272 INFO-datatransfer]:thread_matching_timeout[179]:Wait for matching finish. 3/120
+
+[08:18:56:348 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+[08:18:56:849 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+LAST: tc_he_us 4070, tc_grad_us 353, tc_pyr_us 512, tc_create_us 13, tc_feat_ext_us 217, tc_optflow_us 1126, tc_kf_proc_us 31, tc_rsc_us 113
+
+AVG:  tc_he_us 4268, tc_grad_us 511, tc_pyr_us 694, tc_create_us 20, tc_feat_ext_us 230, tc_optflow_us 1006, tc_kf_proc_us 26, tc_rsc_us 91
+
+[08:18:57:257 INFO-]:optiflow_main[309]:Proc 1000 img[im_ts 32475/os_ts 32504/dly 28]ms {0 lp 25074ms 0 imu 25057ms}cost 9.48ms,lp_ratio 364/636, v[0.00,0.00]qual:0.0
+
+[08:18:57:276 INFO-datatransfer]:thread_matching_timeout[179]:Wait for matching finish. 4/120
+
+[08:18:57:349 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+[08:18:57:848 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+wlan0: STA cc:64:1a:4b:ce:c2 IEEE 802.11: associated
+
+[08:18:58:280 INFO-datatransfer]:thread_matching_timeout[179]:Wait for matching finish. 5/120
+
+wlan0: AP-STA-POSSIBLE-PSK-MISMATCH cc:64:1a:4b:ce:c2
+
+[08:18:58:344 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+[08:18:58:513 INFO-datatransfer]:notify_sensor_status[310]:Notify sensor status:0x0, code:0x0
+
+[08:18:58:848 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+wlan0: AP-STA-POSSIBLE-PSK-MISMATCH cc:64:1a:4b:ce:c2
+
+[08:18:59:284 INFO-datatransfer]:thread_matching_timeout[179]:Wait for matching finish. 6/120
+
+[08:18:59:348 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+[08:18:59:849 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+wlan0: AP-STA-POSSIBLE-PSK-MISMATCH cc:64:1a:4b:ce:c2
+
+[08:19:00:289 INFO-datatransfer]:thread_matching_timeout[179]:Wait for matching finish. 7/120
+
+[08:19:00:349 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+[08:19:00:848 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+[08:19:00:912 INFO-datatransfer]:display_dt_status[503]:dt_connected: 0, fd_dt = -1; itg_connected: 0, fd_dt2 = -1; cam_app_connected: 0, fd_cam_app = -1, cam_rc_connected: 0, fd_cam_rc = -1
+
+wlan0: AP-STA-POSSIBLE-PSK-MISMATCH cc:64:1a:4b:ce:c2
+
+[08:19:01:292 INFO-datatransfer]:thread_matching_timeout[179]:Wait for matching finish. 8/120
+
+[08:19:01:349 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+[08:19:01:763 INFO-datatransfer]:notify_sensor_status[310]:Notify sensor status:0x0, code:0x0
+
+[08:19:01:848 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+wlan0: STA cc:64:1a:4b:ce:c2 IEEE 802.11: disassociated
+
+[08:19:02:296 INFO-datatransfer]:thread_matching_timeout[179]:Wait for matching finish. 9/120
+
+[08:19:02:348 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+[08:19:02:848 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+[08:19:03:300 INFO-datatransfer]:thread_matching_timeout[179]:Wait for matching finish. 10/120
+
+[08:19:03:348 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+[08:19:03:849 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+wlan0: STA cc:64:1a:4b:ce:c2 IEEE 802.11: associated
+
+wlan0: AP-STA-POSSIBLE-PSK-MISMATCH cc:64:1a:4b:ce:c2
+
+[08:19:04:304 INFO-datatransfer]:thread_matching_timeout[179]:Wait for matching finish. 11/120
+
+[08:19:04:345 INFO-datatransfer]:response_fc_matching[429]:matching status: wait to send token
+
+[response matching] dump packet data:
+
+ff fd 04 00 80 00 0a 8e
+
+LAST: tc_he_us 3626, tc_grad_us 347, tc_pyr_us 509, tc_create_us 17, tc_feat_ext_us 126, tc_optflow_us 1192, tc_kf_proc_us 34, tc_rsc_us 111
+
+AVG:  tc_he_us 4311, tc_grad_us 523, tc_pyr_us 694, tc_create_us 17, tc_feat_ext_us 228, tc_optflow_us 1089, tc_kf_proc_us 23, tc_rsc_us 94
+
+[08:19:04:849 INFO-datatransfer]:process_msg_from_fc_to_cam[1181]:FC request poweroff !!!!!!
+
+[08:19:04:945 INFO-datatransfer]:process_msg_from_fc_to_cam[1181]:FC request poweroff !!!!!!
+
+[08:19:05:008 INFO-datatransfer]:notify_sensor_status[310]:Notify sensor status:0x0, code:0x0
+
+[08:19:05:045 INFO-datatransfer]:process_msg_from_fc_to_cam[1181]:FC request poweroff !!!!!!
+
+wlan0: AP-STA-POSSIBLE-PSK-MISMATCH cc:64:1a:4b:ce:c2
+
+[08:19:05:124 WARN-]:acquire_optical_proc[401]:acquire_optical_proc exit
+
+[08:19:05:124 WARN-]:acquire_fcs_msg_proc[358]:acquire_fcs_msg_proc exit
+
+[08:19:05:124 WARN-]:acquire_trackimg_proc[454]:acquire_trackimg_proc exit
+
+[08:19:05:148 INFO-datatransfer]:process_msg_from_fc_to_cam[1181]:FC request poweroff !!!!!!
+
+[08:19:05:152 WARN-]:acquire_gimlog_proc[493]:acquire_gimlog_proc exit
+
+[08:19:05:249 INFO-datatransfer]:process_msg_from_fc_to_cam[1181]:FC request poweroff !!!!!!
+
+[08:19:05:308 INFO-datatransfer]:thread_matching_timeout[179]:Wait for matching finish. 12/120
+
+[08:19:05:348 INFO-datatransfer]:process_msg_from_fc_to_cam[1181]:FC request poweroff !!!!!!
+
+[08:19:05:445 INFO-datatransfer]:process_msg_from_fc_to_cam[1181]:FC request poweroff !!!!!!
+
+[08:19:05:549 INFO-datatransfer]:process_msg_from_fc_to_cam[1181]:FC request poweroff !!!!!!
+
+[08:19:05:648 INFO-datatransfer]:process_msg_from_fc_to_cam[1181]:FC request poweroff !!!!!!
+
+[08:19:05:748 INFO-datatransfer]:process_msg_from_fc_to_cam[1181]:FC request poweroff !!!!!!
+
+[08:19:05:776 INFO-datatransfer]:display_dt_status[503]:dt_connected: 0, fd_dt = -1; itg_connected: 0, fd_dt2 = -1; cam_app_connected: 0, fd_cam_app = -1, cam_rc_connected: 0, fd_cam_rc = -1
+
+[08:19:05:845 INFO-datatransfer]:process_msg_from_fc_to_cam[1181]:FC request poweroff !!!!!!
+
+[08:19:05:945 INFO-datatransfer]:process_msg_from_fc_to_cam[1181]:FC request poweroff !!!!!!
+
+[08:19:06:048 INFO-datatransfer]:process_msg_from_fc_to_cam[1181]:FC request poweroff !!!!!!
+
+wlan0: AP-STA-POSSIBLE-PSK-MISMATCH cc:64:1a:4b:ce:c2
+
+[08:19:06:148 INFO-datatransfer]:process_msg_from_fc_to_cam[1181]:FC request poweroff !!!!!!
+
+[08:19:06:233 WARN-]:propagate[315]:EskfVelAcc::propagate reset(lst_upt_ms 41041, cur_ms 41445)
+
+[08:19:06:248 INFO-datatransfer]:process_msg_from_fc_to_cam[1181]:FC request poweroff !!!!!!
+
+[08:19:06:312 INFO-datatransfer]:thread_matching_timeout[179]:Wait for matching finish. 13/120
+
+[08:19:06:344 INFO-datatransfer]:process_msg_from_fc_to_cam[1181]:FC request poweroff !!!!!!
+
+[08:19:06:449 INFO-datatransfer]:process_msg_from_fc_to_cam[1181]:FC request poweroff !!!!!!
+
+[08:19:06:548 INFO-datatransfer]:process_msg_from_fc_to_cam[1181]:FC request poweroff !!!!!!
+
+[08:19:06:644 INFO-datatransfer]:process_msg_from_fc_to_cam[1181]:FC request poweroff !!!!!!
+
+[08:19:06:748 INFO-datatransfer]:process_msg_from_fc_to_cam[1181]:FC request poweroff !!!!!!
+
+[08:19:06:795 WARN-]:propagate[315]:EskfVelAcc::propagate reset(lst_upt_ms 41930, cur_ms 42011)
+
+[08:19:06:845 INFO-datatransfer]:process_msg_from_fc_to_cam[1181]:FC request poweroff !!!!!!
+
+[08:19:06:945 INFO-datatransfer]:process_msg_from_fc_to_cam[1181]:FC request poweroff !!!!!!
+
+[08:19:06:0995][VCAP_S][ERR] SS_MAPI_VCAP_SaveMotionSensorOnlineDrift:289 write online temp drift crc:0x403c
+
+[notify fc] dump data:
+
+ff fd 04 00 81 00 b0 35
+
+[08:19:07:045 INFO-datatransfer]:process_msg_from_fc_to_cam[1181]:FC request poweroff !!!!!!
+
+wlan0: AP-STA-POSSIBLE-PSK-MISMATCH cc:64:1a:4b:ce:c2
+
+[note that the ap from the drone is on cbannel 14 which US wifi cards dont use unless you set the regulatory zone to jp or a country that uses ch14
+so you wont see the AP
